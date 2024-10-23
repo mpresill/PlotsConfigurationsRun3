@@ -43,7 +43,7 @@ if __name__ == '__main__':
     print("Presel      = {}".format(opt.presel))
     print("Year        = {}".format(opt.year))
     print("Output dir  = {}".format(opt.outputDir))
-    print("variable    = {}".format(opt.variable))
+    print("Variable    = {}".format(opt.variable))
 
     # Exceptions
     if opt.inputFile == 'DEFAULT' :
@@ -68,7 +68,7 @@ if __name__ == '__main__':
         raise ValueError("Please insert the preselection to analyze")
     presel = opt.presel
 
-    
+
     outputDir = opt.outputDir
     variable  = opt.variable
     
@@ -162,10 +162,11 @@ if __name__ == '__main__':
         g_eff.SetName(f"{signal}_{background}_{cut}")
         g_eff.GetXaxis().SetTitle("1 - bkg eff")
         g_eff.GetYaxis().SetTitle("sig eff")
+        g_eff.GetXaxis().SetRangeUser(0,1)
+        g_eff.GetYaxis().SetRangeUser(0,1)
         g_eff.SetPoint(0,1-bkg_eff,sig_eff)
 
         g_eff.Write()
-        
         
         del h_sig
         del h_bkg

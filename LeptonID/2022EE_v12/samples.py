@@ -7,7 +7,7 @@ useXROOTD  = False
 
 # Data and MC directories
 mcProduction = 'Summer22EE_130x_nAODv12_Full2022v12'
-mcSteps      = 'MCl2loose2022EEv12__MCCorr2022EEv12__l2tight'
+mcSteps      = 'MCl2loose2022EEv12__MCCorr2022EEv12__lepID'
 # dataReco     = 'Run2022EE_Prompt_nAODv12_Full2022v12'
 # fakeSteps    = 'DATAl1loose2022EFGv12__fakeW'
 # dataSteps    = 'DATAl2loose2022EEv12__l2tight'
@@ -145,11 +145,11 @@ samples['WW'] = {
     'FilesPerJob' : 2,
 }
 
-# ###### ggF Higgs #######
-# files = nanoGetSampleFiles(mcDirectory, 'GluGluHToWWTo2L2Nu_M125')
+###### ggF Higgs #######
+files = nanoGetSampleFiles(mcDirectory, 'GluGluHToWWTo2L2Nu_M125')
 
-# samples['ggH_hww'] = {
-#     'name'        : files,
-#     'weight'      : mcCommonWeight,
-#     'FilesPerJob' : 2,
-# }
+samples['ggH_hww'] = {
+    'name'        : files,
+    'weight'      : mcCommonWeight,
+    'FilesPerJob' : 2,
+}
